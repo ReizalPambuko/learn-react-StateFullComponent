@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+    align-items: center;
+}
+.product{
+    padding: 2%;
+}
+.product button{
+    padding: 12px 17px;
+    border: none;
+    outline: none;
+    background-color: rgb(132, 0, 255);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.product input{
+    padding: 5px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    border: 1px solid rgb(40, 40, 40);
+    margin: 0 10px;
+}
