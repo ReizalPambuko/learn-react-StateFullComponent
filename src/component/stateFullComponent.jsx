@@ -21,7 +21,7 @@ class StateFullComponent extends Component{
         if(this.state.count > 0){
             this.setState({
                 count: this.state.count - 1
-            },this.handleCounter)()
+            },() => this.handleCounter())
         }
     }
 

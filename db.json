@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "tiktok",
+      "body": "typicode"
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "tiktok",
+      "body": "typicode"
+    },
+    {
+      "id": 1675608582556,
+      "title": "tentang saya",
+      "body": "saya kedepan mau kerja sebaga i frontend developer",
+      "userId": 1
+    },
+    {
+      "id": 1675609166261,
+      "title": "FrontEnd Developer",
+      "body": "HTML,CSS,JAVASCRIPT,BOOTSTRAP,TAILWIND,GIT,GITHUB,REACT JS",
+      "userId": 1
+    },
+    {
+      "id": 1,
+      "title": "",
+      "body": "",
+      "userId": 1
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -4,11 +4,12 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import StateFullComponent from './component/stateFullComponent';
 import Product from './container/Product'
+import PokesApi from './component/pokesApi/PokesApi';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Product />
+    <PokesApi />
   </React.StrictMode>
 );
 
