@@ -13,7 +13,7 @@ class PokesApi extends Component{
         }
     }
 
-    handleCounterChange = (event) => {
+    handleCounterChange = ( ) => {
         const formBlogPostNew = {...this.state.formBlogPost};
         formBlogPostNew[event.target.name] = event.target.value;
         let time = new Date().getTime();
