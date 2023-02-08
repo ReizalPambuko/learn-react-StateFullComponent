@@ -8,6 +8,7 @@ const PostApi = (props) => {
             <div className="content">
                 <h3>{props.data.title}</h3>
                 <p>{props.data.body}</p>
+                <button className="update" onClick={() => props.update(props.data)}>Update</button>
                 <button className="remove" onClick={() => props.remove(props.data.id)}>Remove</button>
             </div>
         </div>

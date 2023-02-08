@@ -1,10 +1,13 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 
 
 class GetDataApi extends Component{
     render(){
         return(
-            <h1>Reizal</h1>
+            <Fragment>       
+                <h3>Hai nama saya reizal pambuko</h3>
+                <p>saya pengen jadi front end developer</p>
+            </Fragment>
         )
     }
 }

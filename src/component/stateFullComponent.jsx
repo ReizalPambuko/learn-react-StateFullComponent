@@ -30,6 +30,7 @@ class StateFullComponent extends Component{
             <Fragment>
                 <div className="product">
                     <img src="" alt="" />
+                    <h1>Saya Belajar Router</h1>
                     <h2>Martabak manis</h2>
                     <button className="minus" onClick={this.handleMinus}>-</button>
                     <input type="text" value={this.state.count}/>
