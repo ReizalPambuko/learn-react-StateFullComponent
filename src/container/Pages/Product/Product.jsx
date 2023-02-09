@@ -1,5 +1,5 @@
 import React, {Component,Fragment} from "react";
-import StateFullComponent from "../component/stateFullComponent";
+import StateFullComponent from "../StateFullComponent/stateFullComponent";
 
 class Product extends Component{
     state = {

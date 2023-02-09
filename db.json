@@ -2,12 +2,6 @@
   "posts": [
     {
       "userId": 1,
-      "id": 2,
-      "title": "tiktok",
-      "body": "typicode"
-    },
-    {
-      "userId": 1,
       "id": 3,
       "title": "tiktok",
       "body": "typicode"
@@ -22,7 +16,8 @@
       "id": 1675609166261,
       "title": "FrontEnd Developer",
       "body": "HTML,CSS,JAVASCRIPT,BOOTSTRAP,TAILWIND,GIT,GITHUB,REACT JS",
-      "userId": 1
+      "userId": 1,
+      "undefined": "HTML,CSS,JAVASCRIPT,BOOTSTRAP,TAILWIND,GIT,GITHUB,REACT JSd"
     }
   ],
   "comments": [],

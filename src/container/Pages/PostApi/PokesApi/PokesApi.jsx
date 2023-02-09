@@ -1,6 +1,6 @@
 import axios from "axios";
 import React,{Component, Fragment} from "react";
-import PostApi from "../../container/PostApi/PostApi";
+import PostApi from "../PostApi";
 
 class PokesApi extends Component{
     state = {
@@ -16,7 +16,7 @@ class PokesApi extends Component{
 
     handleCounterChange = (event) => {
         const formBlogPostNew = {...this.state.formBlogPost};
-        formBlogPostNew[event.target.name] = event.target.value;
+        formBlogPostNew[event.name] = event.target.value;
         let time = new Date().getTime();
         if(!this.state.updateData){
             formBlogPostNew["id"] = time;
@@ -94,6 +94,10 @@ class PokesApi extends Component{
         })
     }
 
+    updateTitle = (id) => {
+        this.props.history.push(`/detail-post/${id}`)
+    }
+
     render(){
         return(
             <Fragment>
@@ -111,7 +115,7 @@ class PokesApi extends Component{
                 </div>
                 {
                     this.state.post.map(datas => {
-                        return <PostApi remove={this.handleRemove} key={datas.id} data={datas} update={this.updateToApi}/>
+                        return <PostApi remove={this.handleRemove} key={datas.id} data={datas} update={this.updateToApi} title={this.updateTitle} />
                     })
                 }
             </Fragment>

@@ -1,9 +1,12 @@
 import React,{Component, Fragment} from "react";
-import StateFullComponent from "../../component/stateFullComponent";
-import Product from '../Product';
+import StateFullComponent from "../Pages/StateFullComponent/stateFullComponent";
+import Product from "../Pages/Product/Product";
 import { Routes, Route, BrowserRouter as Router, Link } from "react-router-dom";
-import GetDataApi from "../../component/getDataApi/GetDataApi";
+import GetDataApi from "../Pages/getDataApi/GetDataApi";
 import "./Homes.css"
+//import PostApi from "../Pages/PostApi/PostApi";
+import PokesApi from "../Pages/PostApi/PokesApi/PokesApi";
+import DetailPost from "../Pages/DetailPost/DetailPost";
 
 
 class Homes extends Component{
@@ -12,13 +15,14 @@ class Homes extends Component{
             <Router>
                 <Fragment>
                     <div>
-                        <Link to="/">Product</Link>
-                        <Link to="/state">StateFull</Link>
+                        <Link to="/">PokesApi</Link>
+                        <Link to="/state">Product</Link>
                         <Link to="/get">GetDataApi</Link>
                     </div>
-                    <Route exact path="/" component={Product} /> 
-                    <Route path="/state" component={StateFullComponent} />
+                    <Route exact path="/" component={PokesApi} /> 
+                    <Route path="/state" component={Product} />
                     <Route path="/get" component={GetDataApi} />
+                    <Route path="/detail-post/:id" component={DetailPost}/>
                 </Fragment>
             </Router>
         )
