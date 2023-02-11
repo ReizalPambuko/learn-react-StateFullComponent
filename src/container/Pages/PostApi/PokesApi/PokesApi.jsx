@@ -1,6 +1,7 @@
 import axios from "axios";
 import React,{Component, Fragment} from "react";
 import PostApi from "../PostApi";
+import "./PokesApi.css"
 
 class PokesApi extends Component{
     state = {
@@ -20,7 +21,7 @@ class PokesApi extends Component{
         let time = new Date().getTime();
         if(!this.state.updateData){
             formBlogPostNew["id"] = time;
-        }
+        };
         this.setState({
             formBlogPost: formBlogPostNew
         })
@@ -101,11 +102,10 @@ class PokesApi extends Component{
     render(){
         return(
             <Fragment>
-                <p className="sectionPost">Blog Post</p>
                 <div className="form-add-post">
                     <label htmlFor="title">Title :</label>
                     <br />
-                    <input type="text" value={this.state.formBlogPost.title} name="title" id="title" placeholder="add Title" onChange={this.handleCounterChange}/>
+                    <input type="text" value={this.state.formBlogPost.title} name="title" id="title" placeholder="add Title" onChange={this.handleCounterChange} />
                     <br />
                     <label htmlFor="body">Blog Content :</label>
                     <br />
