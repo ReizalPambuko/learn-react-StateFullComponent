@@ -2,16 +2,47 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-// import StateFullComponent from './component/stateFullComponent';
-// import Product from './container/Product'
-// import PokesApi from './component/pokesApi/PokesApi';
 import Homes from './container/Homes/Homes';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+
+
+
+const globalState = {
+  totalOrder: 0
+}
+
+//reduce
+const rootReduce = (state = globalState, action) => {
+    if(action.type === 'HANDLE_PLUS'){
+        return{
+          ...state,
+          totalOrder: state.totalOrder + 1
+        }
+    }
+    if(action.type === 'HANDLE_MINUS'){
+      if(state.totalOrder > 0){
+        return{
+          ...state,
+          totalOrder: state.totalOrder - 1
+        }
+          
+      }
+    }
+    return state;
+}
+
+//store
+const storeRedux = createStore(rootReduce);
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={storeRedux}>
     <Homes />
+    </Provider>
   </React.StrictMode>
 );
 

@@ -1,38 +1,34 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class Counter extends Component {
-
-    state = {
-        count: 1
-    }
-
-    handleCounter = () => {
-        this.props.handleOnChange(this.state.count)
-    }
-    
-    handlePlus = () => {
-        this.setState({
-            count: this.state.count + 1 
-        }, () => this.handleCounter() )
-    }
-
-    handleMinus = () => {
-        if(this.state.count > 0){
-            this.setState({
-                count: this.state.count - 1
-            },() => this.handleCounter())
-        }
-    }
 
     render(){
         return(
             <div className="counter">
-                <button className="minus" onClick={this.handleMinus}>-</button>
-                <input type="text" value={this.state.count}/>
-                <button className="plus" onClick={this.handlePlus}>+</button>
+                <button className="minus" onClick={this.props.handleMinus}>-</button>
+                <input type="text" value={this.props.count}/>
+                <button className="plus" onClick={this.props.handlePlus}>+</button>
             </div>
         )
     }
 }
 
-export default Counter;
+//pangil state global ubah jadi props
+const mapStateToProps = (state) => {
+    return{
+        count: state.totalOrder
+    }
+}
+
+
+const mapStateToDispatch = (dispatch) => {
+    return{
+        handlePlus: () => dispatch({type: 'HANDLE_PLUS'}),
+        handleMinus: () => dispatch({type: 'HANDLE_MINUS'})
+    }
+}
+
+
+
+export default connect(mapStateToProps, mapStateToDispatch)(Counter);
