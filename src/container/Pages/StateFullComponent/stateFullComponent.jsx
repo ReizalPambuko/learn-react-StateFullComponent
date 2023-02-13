@@ -11,7 +11,7 @@ class StateFullComponent extends Component{
                     <img src="" alt="" />
                     <h1>Saya Belajar Router</h1>
                     <h2>Martabak manis</h2>
-                    <Counter handleOnChange ={ (value) => this.props.handleOnChange(value) } />
+                    <Counter />
                 </div>
             </Fragment>
         )

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import globaltype from "../redux/globalType";
 
 class Counter extends Component {
 
@@ -24,8 +25,8 @@ const mapStateToProps = (state) => {
 
 const mapStateToDispatch = (dispatch) => {
     return{
-        handlePlus: () => dispatch({type: 'HANDLE_PLUS'}),
-        handleMinus: () => dispatch({type: 'HANDLE_MINUS'})
+        handlePlus: () => dispatch({type: globaltype.ADD_PLUS}),
+        handleMinus: () => dispatch({type: globaltype.ADD_MINUS})
     }
 }
 
