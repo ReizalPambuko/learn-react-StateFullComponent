@@ -17,5 +17,4 @@ class StateFullComponent extends Component{
         )
     }
 }
-
 export default StateFullComponent;

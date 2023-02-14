@@ -1,37 +1,32 @@
 import React, {Component,Fragment} from "react";
+// import { connect } from "react-redux";
+//import { RootContext } from "../../Homes/Homes";
+import { GlobalConsumer } from "../../../context/context";
 import StateFullComponent from "../StateFullComponent/stateFullComponent";
-import { connect } from "react-redux";
+
 
 class Product extends Component{
-    // state = {
-    //     count: 1
-    // }
-    
-    // handleCounter = (newValue) => {
-    //     this.setState({
-    //         count: newValue
-    //     })
-    // }
 
     render(){
         return(
             <Fragment>
                 <div className="header">
                     <h3>R_Shop</h3>
-                    <p>{this.props.count}</p>
+                    <p>{0}</p>
                 </div>
-                <StateFullComponent handleOnChange={(value) => this.handleCounter(value)} />
+                <StateFullComponent />
             </Fragment>
         )
     }
 }
 
 
-const mapState = (state) => {
-    return{
-        count: state.totalOrder
-    }
-}
+// const mapState = (state) => {
+//     return{
+//         count: state.totalOrder
+//     }
+// }
 
 
-export default connect(mapState)(Product);
+//export default connect(mapState)(Product);
+export default Product;

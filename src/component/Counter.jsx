@@ -1,35 +1,27 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import globaltype from "../redux/globalType";
+//import { RootContext } from "../container/Homes/Homes";
+import { GlobalConsumer } from "../context/context";
+//import { connect } from "react-redux";
+//import globaltype from "../redux/globalType";
 
 class Counter extends Component {
 
     render(){
+        console.log(this)
         return(
-            <div className="counter">
-                <button className="minus" onClick={this.props.handleMinus}>-</button>
-                <input type="text" value={this.props.count}/>
-                <button className="plus" onClick={this.props.handlePlus}>+</button>
+            <div>
+                {/* <button className="min" onClick={() => value.dispatch({type: 'HANDLE_MINUS'})}>-</button>
+                <input type="text" value={value.state.totalOrder}/>
+                <button className="plus" onClick={() =>value.dispatch({type: 'HANDLE_PLUS'})}>+</button> */}
             </div>
-        )
+)
     }
 }
 
 //pangil state global ubah jadi props
-const mapStateToProps = (state) => {
-    return{
-        count: state.totalOrder
-    }
-}
-
-
-const mapStateToDispatch = (dispatch) => {
-    return{
-        handlePlus: () => dispatch({type: globaltype.ADD_PLUS}),
-        handleMinus: () => dispatch({type: globaltype.ADD_MINUS})
-    }
-}
+// 
 
 
 
-export default connect(mapStateToProps, mapStateToDispatch)(Counter);
+//export default connect(mapStateToProps, mapStateToDispatch)(Counter);
+export default GlobalConsumer(Counter);

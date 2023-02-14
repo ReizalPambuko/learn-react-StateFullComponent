@@ -3,23 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Homes from './container/Homes/Homes';
-import {createStore} from 'redux';
-import {Provider} from 'react-redux';
-import rootReduce from './redux/globalToState';
+// import {createStore} from 'redux';
+// import {Provider} from 'react-redux';
+// import rootReduce from './redux/globalToState';
 
 
 
 //store
-const storeRedux = createStore(rootReduce);
+// const storeRedux = createStore(rootReduce);
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={storeRedux}>
+    {/* <Provider store={storeRedux}>
     <Homes />
-    </Provider>
+    </Provider> */}
+
+    <Homes />
   </React.StrictMode>
 );
 
