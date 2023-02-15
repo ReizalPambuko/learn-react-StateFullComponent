@@ -12,7 +12,7 @@ class Product extends Component{
             <Fragment>
                 <div className="header">
                     <h3>R_Shop</h3>
-                    <p>{0}</p>
+                    <p>{this.props.state.totalOrder}</p>
                 </div>
                 <StateFullComponent />
             </Fragment>
@@ -29,4 +29,4 @@ class Product extends Component{
 
 
 //export default connect(mapState)(Product);
-export default Product;
+export default GlobalConsumer(Product);

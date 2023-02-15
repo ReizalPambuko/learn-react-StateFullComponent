@@ -5,16 +5,15 @@ import { GlobalConsumer } from "../context/context";
 //import globaltype from "../redux/globalType";
 
 class Counter extends Component {
-
     render(){
         console.log(this)
         return(
             <div>
-                {/* <button className="min" onClick={() => value.dispatch({type: 'HANDLE_MINUS'})}>-</button>
-                <input type="text" value={value.state.totalOrder}/>
-                <button className="plus" onClick={() =>value.dispatch({type: 'HANDLE_PLUS'})}>+</button> */}
+                <button className="min" onClick={() => this.props.dispatch({type: 'HANDLE_MINUS'})}>-</button>
+                <input type="text" value={this.props.state.totalOrder}/>
+                <button className="plus" onClick={() =>this.props.dispatch({type: 'HANDLE_PLUS'})}>+</button>
             </div>
-)
+        )
     }
 }
 

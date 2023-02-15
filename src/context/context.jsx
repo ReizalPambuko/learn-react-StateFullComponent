@@ -10,7 +10,7 @@ const GlobalProvider = (Children) => {
         class proiderComp extends Component{
 
     state = {
-        totalOrder: 5
+        totalOrder: 0
     }
 
 
@@ -59,7 +59,9 @@ export const GlobalConsumer = (Children) => {
                     <Consumer>
                         {
                             value => {
-                                <Children {...this.props} {...value} />
+                                return(
+                                    <Children {...this.props} {...value}/>
+                                )
                             }
                         }
                     </Consumer>
