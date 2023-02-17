@@ -1,5 +1,6 @@
 import axios from "axios";
 import React,{Component, Fragment} from "react";
+import API from "../../../../services";
 import PostApi from "../PostApi";
 import "./PokesApi.css"
 
@@ -12,7 +13,8 @@ class PokesApi extends Component{
             body: '',
             userId: 1
         },
-        updateData: false
+        updateData: false,
+        comment: []
     }
 
     handleCounterChange = (event) => {
@@ -29,16 +31,17 @@ class PokesApi extends Component{
 
 
     getPostApi(){
-        axios.get('http://localhost:3004/posts?_sort=id&_order=desc')
-        .then(res => {
+        API.GetNewsBlog()
+        .then(result => {
             this.setState({
-                post: res.data,
-                formBlogPost: {
-            id: 1,
-            title: '',
-            body: '',
-            userId: 1
-        }
+                post: result
+            })
+        })
+
+        API.GetNewsComment()
+        .then(result => {
+            this.setState({
+                comment: result
             })
         })
     }
@@ -113,6 +116,11 @@ class PokesApi extends Component{
                     <br />
                     <button className="btn-submit" onClick={this.handleSubmit}>Simpan</button>
                 </div>
+                {
+                    this.state.comment.map(res => {
+                        return <p>{res.email}</p>
+                    })
+                }
                 {
                     this.state.post.map(datas => {
                         return <PostApi remove={this.handleRemove} key={datas.id} data={datas} update={this.updateToApi} title={this.updateTitle} />
